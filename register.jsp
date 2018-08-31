@@ -239,13 +239,24 @@ select option {
 }
 
   </style>
+  <script type="text/javascript">
+        function Validate() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            if (password != confirmPassword) {
+                alert("Password don't match")
+                
+            }
+            
+        }
+    </script>
 </head>
 
 <body>
 
   
 <div class="container">
-  <form action="" method="">
+  <form action="/login" method="POST">
     <div class="row">
       <h4>Create Account</h4>
       <div class="input-group input-group-icon">
@@ -253,7 +264,7 @@ select option {
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
 	  <div class="input-group input-group-icon">
-        <input type="text" placeholder="Enter User Name" name="userName" pattern="[A-Za-z]+" required/>
+        <input type="text" placeholder="Enter User Name" name="userName" pattern="[A-Za-z0-9_$]+" required/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
       <div class="input-group input-group-icon">
@@ -261,11 +272,11 @@ select option {
         <div class="input-icon"><i class="fa fa-envelope"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="password" placeholder="Password" name="password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[$@$!%*#.?&])[A-Za-z\d$@$!%.*#?&]{8,}$" required/>
-        <div class="input-icon"><i class="fa fa-key"></i></div>
+        <input type="password" placeholder="Password" id="password" name="password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[$@$!%*#.?&])[A-Za-z\d$@$!%.*#?&]{8,}$"  required/>
+		<div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
 	  <div class="input-group input-group-icon">
-        <input type="password" placeholder="Confirm Password" name="confirmPassword" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[$@$!.%*#?&])[A-Za-z\d$@$!%*.#?&]{8,}$" required/>
+        <input type="password" placeholder="Confirm Password" id="confirmPassword" name="confirmPassword" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[$@$!.%*#?&])[A-Za-z\d$@$!%*.#?&]{8,}$" onfocusout="Validate()" required/>
         <div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
 	  <div class="input-group input-group-icon">
@@ -273,7 +284,7 @@ select option {
         <div class="input-icon"><i class="fa fa-phone"></i></div>
       </div>
 	  <div class="input-group input-group-icon">
-        <input type="text" placeholder="Enter Address" name="address" pattern="[A-Za-z ]+" required/>
+        <input type="text" placeholder="Enter Address" name="address" pattern="[A-Za-z0-9-/ ]+" required/>
         <div class="input-icon"><i class="fa fa-home"></i></div>
       </div>
     </div>
@@ -303,6 +314,7 @@ select option {
 			<input type="submit" value="Create Account" name="create account" id="button">
 		</div>
 	</div>
+	
   </form>
 </div>
  
