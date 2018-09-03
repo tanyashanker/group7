@@ -52,10 +52,11 @@ public class TestController {
               return mav;
        }
        @GetMapping("/demo")
-       public ModelAndView demo(@ModelAttribute("username")String userName,@ModelAttribute("password")String password) {
+       public ModelAndView demo( @ModelAttribute("username")String userName,@ModelAttribute("password")String password) {
               //ModelAndView mav; ;
              int flag=registerDAO.validate(userName,password);
              System.out.println(flag);
+             
              if (flag==1)
               return new ModelAndView("demo");
              else

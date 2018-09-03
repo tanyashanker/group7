@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Homepage</title>
 </head>
 <body>
+<h2>Dummy Homepage(Stay tuned!)</h2>
+<br>
 <a href="/login">Login</a><br>
 <a href="/register">Sign Up</a>
 </body>

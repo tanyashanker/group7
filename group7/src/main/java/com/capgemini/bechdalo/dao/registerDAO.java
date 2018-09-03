@@ -13,8 +13,8 @@ static ArrayList<userDetails> user=new ArrayList<userDetails>();
 static userDetails uDetails;
 static {
 	user.add(new userDetails("tanya","tan1","tanya@gmail.com","Winter.1480","Pagal khana","9540752995","female"));
-	user.add(new userDetails("tanya","tan1","tanya@gmail.com","Winter.1480","Pagal khana","9540752995","female"));
-	user.add(new userDetails("tanya","tan1","tanya@gmail.com","Winter.1480","Pagal khana","9540752995","female"));
+	user.add(new userDetails("tanya","tan2","tanya@gmail.com","Winter.1480","Pagal khana","9540752995","female"));
+	user.add(new userDetails("tanya","tan3","tanya@gmail.com","Winter.1480","Pagal khana","9540752995","female"));
 	
 }
 public static void insert(userDetails u)

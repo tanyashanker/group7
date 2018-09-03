@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,9 +23,10 @@ a,
 }
 .signup__container {
   position: absolute;
-  top: 55%;
+  top: 60%;
   right: 0;
   left: 0;
+  align-y: center;
   bottom: 500px;
   margin-top: 11px;
   margin-right: auto;
@@ -202,23 +201,15 @@ img {vertical-align: middle;}
 	box-shadow: 0 0 10px #7ed321;
 }
 .header-left{
-	padding-left:20px;
+	padding-top: 10px;
+	padding-left:25px;
     float: left;
 }
-<!--
-.container{
-	height: 800px;
-	 width: 100%;
-}
--->
 .container-fluid{
 	background-color: #3c3d41;
-	margin-top: 40%;
+	
 	height: 150px;
 	box-shadow: 0 0 10px #7ed321;
-}
-.footer-icons{
-	
 }
 .fa {
     padding: 8px;
@@ -248,7 +239,7 @@ img {vertical-align: middle;}
     color: white;
 }
 ul#horizontal-list {
-	min-width: 696px;
+	min-width: 600px;
 	list-style: none;
 	padding-top: 20px;
 	}
@@ -276,20 +267,28 @@ ul#horizontal-list {
 		font-size: 25px;
 		font-size:2vw;
 	}
+	#connection li{
+	padding-left:8px;
+	
+	}
 </style>
 </head>
 <body>
 <!--
 <div class="container">
 -->
+<table class="new-container">
+<tr>
 <header id="header-container">
        <div class="header">
               <div class="header-left">  
                      <h1>
-                                  <a href="/homepage" id="headerLogo" class="logo" >
+                                  <a href="/homepage" id="headerLogo" class="logo" style="text-decoration:none;">
                                          <img src="\images\logo.jpg" height="90" width="150" />
-										 <i style="padding-left:10px; font-family: 'Comic Sans MS', Times, serif;"> India Bole Bech Dalo! </i>
+										 <i style="padding-left:250px; font-family: 'Times New Roman' ; font-size: 50px;"> India Bole Bech Dalo! </i>
                                   </a>
+                                  
+                                  
                      </h1>					 
               </div>
 			  <div class="header-right" hidden="hidden">
@@ -300,22 +299,44 @@ ul#horizontal-list {
 			  </div>
        </div>
 	</header>
-
-
-  <div class="signup__container">
+</tr>
+<tr>
+  <div class="signup__container" style="overflow: hidden;
+    background-color: white;
+    border-color: #9ecaed;
+	box-shadow: 0 0 10px #7ed321;
+	position: absolute;
+	margin-top: 0%;
+	">
   
 
   <div class="container__child signup__thumbnail">
     <div class="thumbnail__logo">
 	<div class="mySlides fade">
       <img src="\images\laptop.jpg" style="width:100%">
-	</div>
-	<div class="mySlides fade">
+                </div>
+                <div class="mySlides fade">
       <img src="\images\bike1.jpg" style="width:100%">
-	</div>
-	<div class="mySlides ">
+                </div>
+                <div class="mySlides fade">
       <img src="\images\mobile.jpg" style="width:100%">
-	</div>
+                </div>
+                <div class="mySlides fade">
+      <img src="\images\dog.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+      <img src="\images\books.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+      <img src="\images\car.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+      <img src="\images\shoes.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+      <img src="\images\fashion1.jpg" style="width:100%">
+                </div>
+
 	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 	<a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
@@ -333,20 +354,33 @@ function currentSlide(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  //var dots = document.getElementsByClassName("dot");
+
   if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";  
   }
-  /*for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }*/
+ 
   slides[slideIndex-1].style.display = "block";  
-  //dots[slideIndex-1].className += " active";
+  
+}
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000);
 }
 </script>
 
+	
 	
     <div class="thumbnail__content text-center">
       <h1 class="heading--primary">Welcome to BechDalo!</h1>
@@ -362,7 +396,7 @@ function showSlides(n) {
 	  <br>
 	  <br>
         <label id="uname" for="username"><b>Username</b></label>
-        <input class="form-control" type="text" name="username" id="username" placeholder="james.bong" required />
+        <input class="form-control" type="text" name="username" id="username" placeholder="username" required />
       </div>
       <div class="form-group">
         <label id="pass" for="password"><b>Password</b></label>
@@ -387,30 +421,26 @@ function showSlides(n) {
   
      
 </div>
+</tr>
+<tr>
 <!--FOOTER-->
-	  <footer class="footer page-footer font-small blue pt-4">
-		<div class="container-fluid text-center text-md-left">
-		
-		
-		
-
-   
-
+	  <footer class="footer page-footer font-small blue pt-4" >
+		<div class="container-fluid text-center text-md-left" style="position:absolute; margin-top: 41.5%; width:100%;">
       <!-- Grid row -->
       <div class="row">
 
         <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mb-3 tag">
+        <div class="col-md-6 mt-md-0 mb-3 tag" style="width:40%;">
 
           <!-- Content -->
           <h2 class="text-col">BechDalo!</h2>
-          <p class="text-col">India Bole Bech Dalo.</p>
+          <p class="text-col">India Bole Bech Dalo</p>
 
         </div>
         
 
         <!-- Grid column -->
-        <div class="col-md-3 mb-md-0 mb-3">
+        <div class="col-md-3 mb-md-0 mb-3" style="width:35%; padding-top:5px;">
 
             <!-- Links -->
             <h4 class="text-col">Links</h4>
@@ -434,7 +464,7 @@ function showSlides(n) {
           <!-- Grid column -->
 
           <!-- Grid column -->
-          <div class="col-md-3 mb-md-0 mb-3">
+          <div class="col-md-3 mb-md-0 mb-3" id="connection" style="padding-top:10px;">
 
             <!-- Links -->
             <h4 class="text-col">Connect With Us</h4>
@@ -460,7 +490,7 @@ function showSlides(n) {
       </div>
       <!-- Grid row -->
 
-    </div>
+    
     <!-- Footer Links -->
 
     <!-- Copyright -->
@@ -471,18 +501,13 @@ function showSlides(n) {
 
 
 		
+		</div>
 		
-		
-	  </footer> 
-
+	  </footer>
+	  </tr>
 	<!--  </div>	-->
+	
+	 </table>
 	  
-	  
-</body>
-
-</html>
-
-
-
 </body>
 </html>
